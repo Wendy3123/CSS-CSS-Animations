@@ -7,6 +7,7 @@
   width: 20%;
   margin: auto;
   display: inline-block;
+  transform:translate(150px)
 }
 
 /****************************************
@@ -17,11 +18,16 @@
   margin-bottom: .5em;
   width: 200px;
   height: 200px;
-  filter: grayscale(100%);
-
+  filter: grayscale(100%);  /*pictures are now grey*/
+  transition-duration: 5s;  /*this transition will last for 5 secs*/
+  
 }
 
 .transition-demo img:hover {
+  filter:none;      /*removes the grey color to show rainbow color scale*/
+  rotate:180deg;    /*this rotates the picture 180 deg*/
+  width:300px;      /*width of pic after hover*/
+  height:300px;     /*height of pic after hover*/
 
 }
 
@@ -35,11 +41,14 @@
   width: 500px;
   margin: auto;
   background-color: palegreen;
-
+  animation-duration: 8s;
+  animation-name:sale-bar;
 }
 
 @keyframes sale-bar {
   0% { background-color: lightgreen; width: 450px }
-  75% { background-color: #FF033E; width: 125x }
-  100% { background-color: crimson; width: 10px }
+  25%{ background-color: plum; width:250px; border-radius:10px;}
+  50% {background-color: aqua;width: 180px; height: 25px;border-radius: 15px;}
+  75% { background-color: lightcoral; width: 125px;height: 20px; border-radius:20px; }
+  100% { background-color: crimson; width: 10px; height: 10px;border-radius:25px;}
 }
